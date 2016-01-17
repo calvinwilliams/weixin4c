@@ -90,6 +90,9 @@ int PUBTrimHeadCharset( char *str , char *charset )
 	char	*end = NULL ;
 	int	count ;
 	
+	if( str == NULL || str[0] == '\0' )
+		return 0;
+	
 	for( p = str , end = str + strlen(str) - 1 , count = 0 ; p <= end ; p++ )
 	{
 		if( strchr( charset , (*p) ) )
@@ -112,6 +115,9 @@ int PUBTrimHead( char *str )
 	char	*p = NULL ;
 	char	*end = NULL ;
 	int	count ;
+	
+	if( str == NULL || str[0] == '\0' )
+		return 0;
 	
 	for( p = str , end = str + strlen(str) - 1 , count = 0 ; p <= end ; p++ )
 	{
@@ -139,6 +145,9 @@ int PUBTrimTail( char *str )
 {
 	char	*p = NULL ;
 	int	count ;
+	
+	if( str == NULL || str[0] == '\0' )
+		return 0;
 	
 	for( p = str + strlen(str) - 1 , count = 0 ; p >= str ; p-- )
 	{

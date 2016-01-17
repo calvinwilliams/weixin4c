@@ -2,6 +2,7 @@ v0.2.4		2016-01-17	calvin
 		* 修正了输出缓冲区编码笔误
 		* 调整了输出缓冲区大小
 		* 新增封装函数PUBSnprintF,PUBTrim
+		* 新增基于本框架开发的微信公众号“钛搜索”关注二维码doc/taisousuo_qrcode.jpg
 
 v0.2.3		2016-01-16	calvin
 		* 新增了一批公共函数

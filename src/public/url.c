@@ -115,6 +115,12 @@ int PUBUrlExpand( char *str , char *expand , int *p_expand_len , unsigned long o
 				len += 1 ;
 				expand += 1 ;
 			}
+			else if( (*p) == ' ' )
+			{
+				expand[0] = '+' ;
+				len += 1 ;
+				expand += 1 ;
+			}
 			else
 			{
 				if( len + 3 > (*p_expand_len) )
