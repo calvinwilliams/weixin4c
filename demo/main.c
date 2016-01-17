@@ -8,6 +8,9 @@ int main()
 	conf.run_mode = WEIXIN4C_RUNMODE_PRODUCT ;
 	conf.home = "/home/demo" ;
 	conf.project_name = "demo" ;
+	conf.funcs.pfuncInitEnvProc = & InitEnvProc ;
+	conf.funcs.pfuncCleanEnvProc = & CleanEnvProc ;
+	conf.funcs.pfuncReceiveEventProc = & ReceiveEventProc ;
 	conf.funcs.pfuncReceiveEventProc = & ReceiveEventProc ;
 	conf.funcs.pfuncReceiveTextProc = & ReceiveTextProc ;
 	conf.funcs.pfuncReceiveImageProc = & ReceiveImageProc ;

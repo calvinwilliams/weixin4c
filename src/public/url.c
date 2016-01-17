@@ -75,3 +75,66 @@ int PUBDupUrlParam( char *key , char **pp_value )
 	return 0;
 }
 
+int PUBUrlExpand( char *str , char *expand , int *p_expand_len , unsigned long options )
+{
+	int		len ;
+	unsigned char	*p = NULL ;
+	char		charset[] = "0123456789abcdefghijklmnopqrstuvwxyz" ;
+	
+	for( p = (unsigned char *)str , len = 0 ; (*p) ; p++ )
+	{
+		if( ( options & WEIXIN5C_URLOPTIONS_STRING_LOCATION ) == WEIXIN5C_URLOPTIONS_FULLSTRING )
+		{
+			if( len + 3 > (*p_expand_len) )
+			{
+				if( ( options & WEIXIN5C_URLOPTIONS_OVERFLOW_LOCATION ) == WEIXIN5C_URLOPTIONS_OVERFLOW_ERROR )
+					return -1;
+				else
+					return 0;
+			}
+			
+			expand[0] = '%' ;
+			expand[1] = charset[(((*p)&0xF0)>>4)] ;
+			expand[2] = charset[((*p)&0x0F)] ;
+			len += 3 ;
+			expand += 3 ;
+		}
+		else
+		{
+			if( isalnum(*p) )
+			{
+				if( len + 1 > (*p_expand_len) )
+				{
+					if( ( options & WEIXIN5C_URLOPTIONS_OVERFLOW_LOCATION ) == WEIXIN5C_URLOPTIONS_OVERFLOW_ERROR )
+						return -1;
+					else
+						return 0;
+				}
+				
+				expand[0] = p[0] ;
+				len += 1 ;
+				expand += 1 ;
+			}
+			else
+			{
+				if( len + 3 > (*p_expand_len) )
+				{
+					if( ( options & WEIXIN5C_URLOPTIONS_OVERFLOW_LOCATION ) == WEIXIN5C_URLOPTIONS_OVERFLOW_ERROR )
+						return -1;
+					else
+						return 0;
+				}
+				
+				expand[0] = '%' ;
+				expand[1] = charset[(((*p)&0xF0)>>4)] ;
+				expand[2] = charset[((*p)&0x0F)] ;
+				len += 3 ;
+				expand += 3 ;
+			}
+		}
+		
+	}
+	
+	return 0;
+}
+

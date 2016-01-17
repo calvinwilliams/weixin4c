@@ -80,3 +80,24 @@ int PUBDupConvCharacterCode( char *from_character_code , char *to_character_code
 	return converted;
 }
 
+/*
+int PUBDecodingUnicode( char *str )
+{
+	char	*p = NULL ;
+	char	charset[] = "0123456789abcdef" ;
+	
+	while(1)
+	{
+		p = strstr( str , "\\u" ) ;
+		if( p == NULL )
+			break;
+		
+		p[0] = ((strchr(charset,*(p+4))-charset)<<4) + (strchr(charset,*(p+5))-charset) ;
+		p[1] = ((strchr(charset,*(p+2))-charset)<<4) + (strchr(charset,*(p+3))-charset) ;
+		memmove( p+2 , p+6 , strlen(p+6)+1 );
+	}
+	
+	return strlen(str);
+}
+*/
+

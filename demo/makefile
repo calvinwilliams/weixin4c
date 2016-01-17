@@ -8,6 +8,8 @@
 ###### 源文件配置区
 #@ c_FILE
 c_FILE		=	main.c \
+			InitEnvProc.c \
+			CleanEnvProc.c \
 			ReceiveEventProc.c \
 			ReceiveTextProc.c \
 			ReceiveImageProc.c \
