@@ -7,8 +7,8 @@
 
 ###### 子目录配置区
 DIROBJS		= \
-			accesstoken \
 			public \
+			accesstoken \
 			weixin4c \
 
 ###### 加载mktpl模板库
