@@ -83,7 +83,7 @@
 
 typedef struct
 {
-	char	access_token[ 117 + 1 ] ;
+	char	access_token[ 256 + 1 ] ;
 	int	expires_in ;
 } accesstoken ;
 
