@@ -1,3 +1,6 @@
+v0.2.7		2016-04-04	calvin
+		* 修正了pic、shortvideo的请求接口解包问题。感谢wangjun0710
+
 v0.2.6		2016-03-31	calvin
 		* 因微信官方而改动，放长了IDL_accesstoken.dsc里access_token的长度
 

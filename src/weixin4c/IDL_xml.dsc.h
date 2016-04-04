@@ -90,10 +90,10 @@ typedef struct
 	char	Content[ 4096 + 1 ] ;
 	char	Event[ 64 + 1 ] ;
 	char	PicUrl[ 1024 + 1 ] ;
-	char	MediaId[ 40 + 1 ] ;
+	char	MediaId[ 128 + 1 ] ;
 	char	Format[ 16 + 1 ] ;
 	char	Recognition[ 1024 + 1 ] ;
-	char	ThumbMediaId[ 40 + 1 ] ;
+	char	ThumbMediaId[ 128 + 1 ] ;
 	double	Location_X ;
 	double	Location_Y ;
 	int	Scale ;

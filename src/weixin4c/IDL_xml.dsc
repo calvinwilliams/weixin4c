@@ -7,10 +7,10 @@ STRUCT	xml
 	STRING 4096	Content
 	STRING 64	Event
 	STRING 1024	PicUrl
-	STRING 40	MediaId
+	STRING 128	MediaId
 	STRING 16	Format
 	STRING 1024	Recognition
-	STRING 40	ThumbMediaId
+	STRING 128	ThumbMediaId
 	FLOAT 8		Location_X
 	FLOAT 8		Location_Y
 	INT 4		Scale
